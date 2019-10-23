@@ -163,7 +163,7 @@ final class Tentacle
         fwrite($tmp_file, $xml_string);
         fclose($tmp_file);
         $output = shell_exec("tentacle_client -a $this->pandora_ip -p $this->tentacle_port $file_path");
-        //unlink($file_path); //Deletes the file
+        unlink($file_path); //Deletes the file
         return $output;
     }
 }
